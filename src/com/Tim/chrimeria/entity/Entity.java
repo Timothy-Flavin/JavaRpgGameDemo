@@ -1,0 +1,31 @@
+package com.Tim.chrimeria.entity;
+
+import java.util.Random;
+
+import com.Tim.chrimeria.graphics.Screen;
+import com.Tim.chrimeria.level.Level;
+
+public abstract class Entity {
+	
+	public int x, y;
+	private boolean removed = false;
+	protected Level level;
+	final protected Random random = new Random();
+	
+	public void update(){
+	}
+	
+	public void render(Screen screen){
+	}
+	public void remove(){
+		//remove from level
+		removed = true;
+	}
+	public boolean isRemoved(){
+		return removed;
+	}
+	
+	public void init(Level level){
+		this.level = level;
+	}
+}
